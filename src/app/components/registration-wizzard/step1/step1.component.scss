@@ -1,0 +1,58 @@
+.form-group {
+  margin-bottom: 0.5em;
+}
+
+label {
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+
+select,
+input {
+  width: 80%;
+  font-size: 0.9em;
+  padding-left: 0.5em;
+  border: 2px solid #000;
+}
+
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border-color: red;
+}
+select.ng-touched.ng-valid {
+  background-color: #fff;
+}
+
+select {
+  background-color: #d8d8d8;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  display: inline-block;
+  border: 1px solid #000;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+label.checkbox,
+label.radio {
+  display: inline;
+  margin-left: 1em;
+}
+
+label.radio {
+  margin-left: 0;
+  font-size: 0.8em;
+}
+
+input[type="radio"]:not(:first-child) {
+  margin-left: 2em;
+}
+
+.radiobox {
+  line-height: 1em;
+}

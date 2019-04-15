@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client-registration';
+  messageInput: string = "labadiena";
+
+  receiveEmail($event) {
+    this.messageInput = $event
+  }
 }

@@ -1,0 +1,19 @@
+<div *ngIf="email !== undefined; then wizzardBlock; else errorBlock"></div>
+<ng-template #wizzardBlock>
+  <header>
+    <h2>Step {{ step }} of {{ stepsTotal }}</h2>
+    <p>It will take about 3 min.</p>
+    <h2>Continue registration for {{ email }}</h2>
+  </header>
+  <app-step1 *ngIf="step === 1"> </app-step1>
+  <button *ngIf="step > 1" type="button" (click)="onPrevClick()">
+    Previous step
+  </button>
+  <button *ngIf="step < stepsTotal" type="button" (click)="onNextClick()">
+    Next step
+  </button>
+</ng-template>
+<ng-template #errorBlock
+  ><h2>Ooops! Something wrong.</h2>
+  <p>Check the verification URL</p>
+</ng-template>

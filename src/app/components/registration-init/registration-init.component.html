@@ -1,0 +1,13 @@
+<div *ngIf="!submited; then sendBlock; else verifyBlock"></div>
+<ng-template #sendBlock
+  ><app-send-email
+    [email]="email"
+    (emailEvent)="receiveEmail($event)"
+  ></app-send-email
+></ng-template>
+<ng-template #verifyBlock
+  ><app-verify-email
+    [email]="email"
+    (emailEvent)="receiveEmail($event)"
+  ></app-verify-email
+></ng-template>

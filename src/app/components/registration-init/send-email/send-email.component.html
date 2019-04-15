@@ -1,0 +1,31 @@
+<div class="sendEmail">
+  <h2>{{ messageWelcome }}</h2>
+  <p>Note that the service is only available to legal entities</p>
+  <p>
+    Enter your email to proceed.<br />
+    Your email will be your username in internet bank.
+  </p>
+
+  <div class="input-group">
+    <div class="input-group-prepend">@</div>
+    <input
+      #email
+      type="email"
+      [formControl]="emailInput"
+      placeholder="info@company.com"
+      autofocus
+    />
+  </div>
+
+  <span class="error" *ngIf="emailInput.invalid && emailInput.touched"
+    >Please enter correct email.</span
+  >
+
+  <button
+    type="button"
+    [disabled]="emailInput.invalid"
+    (click)="onEmailSubmit(email.value)"
+  >
+    Start
+  </button>
+</div>

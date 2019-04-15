@@ -1,0 +1,72 @@
+<form [formGroup]="step1Form">
+  <div class="form-group">
+    <label for="affiliation">Affiliation</label>
+    <select id="affiliation" formControlName="affiliation">
+      <option *ngFor="let affiliation of affiliations" [value]="affiliation">{{
+        affiliation
+      }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="name" formControlName="name" />
+  </div>
+  <div class="form-group">
+    <label for="surname">Surname</label>
+    <input
+      type="text"
+      id="surname"
+      placeholder="surname"
+      formControlName="surname"
+    />
+  </div>
+  <div class="form-group">
+    <label for="personalCode">Personal Code</label>
+    <input
+      type="text"
+      id="personalCode"
+      placeholder="personal code"
+      formControlName="personalCode"
+    />
+  </div>
+  <input type="checkbox" name="checkbox" formControlName="checkbox" /><label
+    class="checkbox"
+    >Personal code is not assigned</label
+  ><br />
+  <div class="form-group">
+    <label for="nationality">Nationality</label>
+    <select id="nationality" formControlName="nationality">
+      <option value="" disabled>Choose</option>
+      <option *ngFor="let nationality of nationalities" [value]="nationality">{{
+        nationality
+      }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="radio" for="pep"
+      >PEP* (Politically exposed person) status. If yes, please state the
+      role/position</label
+    >
+    <div class="radiobox">
+      <input type="radio" name="pep" value="true" formControlName="pep" /><label
+        class="radio"
+        >Yes</label
+      >
+      <input
+        type="radio"
+        name="pep"
+        value="false"
+        formControlName="pep"
+      /><label class="radio">No</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="rolePosition">Role/Position</label>
+    <select id="rolePosition" formControlName="rolePosition">
+      <option value="" disabled>Choose</option>
+      <option *ngFor="let position of positions" [value]="position">{{
+        position
+      }}</option>
+    </select>
+  </div>
+</form>
